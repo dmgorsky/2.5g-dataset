@@ -1,7 +1,21 @@
+# TASK
+1. The challenge must be solved using either Python, Scala, Java or any other programming languages. You're free to use any framework/3rd party lib of your choice.
+
+2. For the purpose of solving the task, you will need to download the dataset which contains songs played by Last.fm's users: http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-1K.tar.gz
+
+3. DO NOT UPLOAD THE DATASET TO YOUR GITHUB/BITBUCKET REPO - USE IT FOR LOCAL TESTS ONLY!
+
+4. Write a service, which accepts the path to the dataset and produces a list of top 10 songs played in the top 50 longest user sessions by tracks count. Each user session may be comprised of one or more songs played by that user, where each song is started within 20 minutes of the previous song's start time.
+
+5. Your solution must be properly documented and provided with the instructions to run and test it.
+
+
+# SOLUTION
+
 > 5 Write a service, which accepts the path to the dataset and produces a list of top 10 songs played in the top 50 longest user sessions by tracks count. Each user session may be comprised of one or more songs played by that user, where each song is started within 20 minutes of the previous song's start time.
 > ...http://mtg.upf.edu/static/datasets/last.fm/lastfm-dataset-1K.tar.gz...
 
-This task solution took me a couple of evenings (thanks in advance for being patient while waiting :), it's sometimes hard to work from home, especially these days.
+This task solution took me a couple of evenings.
 Back to our topic, the task looks like an olympiad problem which I love so much.
 I've just used Apache Spark to cope with a big-sized dataset collections, and the straightforward algorithm is the following:
 * we divide source dataset by users and order by timestamps inside each one (our main window for analytical functions);
